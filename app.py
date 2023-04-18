@@ -35,8 +35,9 @@ pipe = StableDiffusionControlNetInpaintPipeline.from_pretrained(
     torch_dtype=torch.float16,
 )
 pipe.scheduler = UniPCMultistepScheduler.from_config(pipe.scheduler.config)
-pipe.enable_model_cpu_offload()
-pipe.enable_xformers_memory_efficient_attention()
+#pipe.enable_model_cpu_offload()
+#pipe.enable_xformers_memory_efficient_attention()
+pipe = pipe.to(device)
 
 
 with gr.Blocks() as demo:
