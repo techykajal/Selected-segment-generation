@@ -10,3 +10,4 @@ onnx
 transformers
 accelerate
 xformers
+gradio
